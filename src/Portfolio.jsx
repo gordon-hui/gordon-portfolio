@@ -746,6 +746,14 @@ function Contact({ c }) {
           </div>
         ) : (
           <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            {/* Honeypot field - hidden from humans, catches bots */}
+            <input
+              type="text"
+              name="_gotcha"
+              style={{ display: "none" }}
+              tabIndex="-1"
+              autoComplete="off"
+            />
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <div style={{ flex: "1 1 240px" }}>
                 <label style={{ fontFamily: "'Nunito Sans', sans-serif", fontSize: 13, color: c.textMuted, display: "block", marginBottom: 6, letterSpacing: "0.02em" }}>
